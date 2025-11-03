@@ -1,0 +1,17 @@
+server:
+  port: 9001
+  ## session 配置
+  servlet:
+    session:
+      timeout: 1800
+      persistent: false
+
+
+spring:
+  redis:
+    host: localhost
+    port: 6379
+    password: redis
+
+  session:
+    store-type: redis  # 指定存储类型
