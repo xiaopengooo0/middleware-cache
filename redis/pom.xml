@@ -18,6 +18,7 @@
         <module>example03-message</module>
         <module>example04-analise</module>
         <module>example05-lock</module>
+        <module>example06-bitmap</module>
     </modules>
 
     <properties>
