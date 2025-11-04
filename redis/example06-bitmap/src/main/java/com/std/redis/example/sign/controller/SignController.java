@@ -21,6 +21,10 @@ public class SignController {
 
     @RequestMapping("/sign")
     public ResponseEntity<?> sign(String userId) {
-        return ResponseEntity.ok(userSignService.sign(userId));
+        try {
+            return ResponseEntity.ok(userSignService.sign(userId));
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
     }
 }

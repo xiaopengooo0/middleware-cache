@@ -1,5 +1,6 @@
 package com.std.redis.example.sign.service;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
@@ -11,6 +12,7 @@ import java.time.format.DateTimeFormatter;
  * @Description: TODO
  * @DateTime: 2025/11/4 下午5:12 星期二
  **/
+@Slf4j
 @Service
 public class UserSignService {
 
@@ -34,7 +36,7 @@ public class UserSignService {
         // 如果返回false，表示之前未签到，现在已签到
         // 如果返回true，表示之前已签到
         boolean wasAlreadySigned = Boolean.TRUE.equals(redisTemplate.opsForValue().setBit(key, dayOfMonth - 1, true));
-        
+        log.info("用户{}在{}签到，结果：{}", userId, now, !wasAlreadySigned);
         if (wasAlreadySigned) {
             throw new RuntimeException("已经签到过了");
         }
