@@ -1,0 +1,16 @@
+server:
+  port: 9005
+
+## 单机
+spring:
+  redis:
+    host: localhost
+    port: 6379
+    password: redis
+
+
+
+
+
+
+

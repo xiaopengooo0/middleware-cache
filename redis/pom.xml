@@ -16,6 +16,8 @@
         <module>example01-session</module>
         <module>example02-count</module>
         <module>example03-message</module>
+        <module>example04-analise</module>
+        <module>example05-lock</module>
     </modules>
 
     <properties>
