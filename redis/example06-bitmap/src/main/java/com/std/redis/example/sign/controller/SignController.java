@@ -27,4 +27,24 @@ public class SignController {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
     }
+
+    @RequestMapping("/supplySign")
+    public ResponseEntity<?> supplySign(String userId,String signDate) {
+        try {
+            return ResponseEntity.ok(userSignService.supplySign(userId,signDate));
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
+    }
+
+    @RequestMapping("signCount")
+    public ResponseEntity<?> signCount(String userId,String signDate) {
+        try {
+            return ResponseEntity.ok(userSignService.getSignCount(userId,signDate));
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
+    }
+
+
 }
